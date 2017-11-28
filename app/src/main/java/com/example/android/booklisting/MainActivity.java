@@ -54,14 +54,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                     @Override
                     public void onClick(View view) {
 
-                        /*ListView bookListView = (ListView) findViewById(R.id.list);
-
-                        mEmptyStateTextView = (TextView) findViewById(R.id.empty_view);
-                        bookListView.setEmptyView(mEmptyStateTextView);
-
-                        mAdapter = new BookAdapter(MainActivity.this, new ArrayList<Book>());
-
-                        bookListView.setAdapter(mAdapter);*/
                         EditText text = (EditText) findViewById(R.id.search_input);
 
                         Uri baseUri = Uri.parse(REQUEST);
@@ -126,13 +118,13 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         View loadingIndicator = findViewById(R.id.loading_indicator);
         loadingIndicator.setVisibility(View.GONE);
 
-        // Set empty state text to display "No earthquakes found."
+        // Set empty state text to display "No books found."
         mEmptyStateTextView.setText(R.string.no_books);
 
-        // Clear the adapter of previous earthquake data
+        // Clear the adapter of previous book data
         mAdapter.clear();
 
-        // If there is a valid list of {@link Earthquake}s, then add them to the adapter's
+        // If there is a valid list of {@link Book}s, then add them to the adapter's
         // data set. This will trigger the ListView to update.
         if (books != null && !books.isEmpty()) {
             mAdapter.addAll(books);
